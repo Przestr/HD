@@ -12,6 +12,7 @@ public class Data {
     public String date;
     public String total_deaths_per_million;
     public String new_deaths_per_million;
+    public String nazwa_gdansk;
     public String gdansk_pm25;
     public String gdansk_pm10;
     public String gdansk_o3;
@@ -20,6 +21,7 @@ public class Data {
     public String gdansk_co;
     public String gdansk_population;
 
+    public String nazwa_krakow;
     public String krakow_pm25;
     public String krakow_pm10;
     public String krakow_o3;
@@ -28,6 +30,7 @@ public class Data {
     public String krakow_co;
     public String krakow_population;
 
+    public String nazwa_warszawa;
     public String warszawa_pm25;
     public String warszawa_pm10;
     public String warszawa_o3;
@@ -36,21 +39,23 @@ public class Data {
     public String warszawa_co;
     public String warszawa_population;
 
-    public String suwalki_pm25;
-    public String suwalki_pm10;
-    public String suwalki_o3;
-    public String suwalki_no2;
-    public String suwalki_so2;
-    public String suwalki_co;
-    public String suwalki_population;
+    public String nazwa_katowice;
+    public String katowice_pm25;
+    public String katowice_pm10;
+    public String katowice_o3;
+    public String katowice_no2;
+    public String katowice_so2;
+    public String katowice_co;
+    public String katowice_population;
 
     public Data() {
     }
 
-    public Data(String date, String total_deaths_per_million, String new_deaths_per_million, String gdansk_pm25, String gdansk_pm10, String gdansk_o3, String gdansk_no2, String gdansk_so2, String gdansk_co, String gdansk_population, String krakow_pm25, String krakow_pm10, String krakow_o3, String krakow_no2, String krakow_so2, String krakow_co, String krakow_population, String warszawa_pm25, String warszawa_pm10, String warszawa_o3, String warszawa_no2, String warszawa_so2, String warszawa_co, String warszawa_population, String suwalki_pm25, String suwalki_pm10, String suwalki_o3, String suwalki_no2, String suwalki_so2, String suwalki_co, String suwalki_population) {
+    public Data(String date, String total_deaths_per_million, String new_deaths_per_million, String nazwa_gdansk, String gdansk_pm25, String gdansk_pm10, String gdansk_o3, String gdansk_no2, String gdansk_so2, String gdansk_co, String gdansk_population, String nazwa_krakow, String krakow_pm25, String krakow_pm10, String krakow_o3, String krakow_no2, String krakow_so2, String krakow_co, String krakow_population, String nazwa_warszawa, String warszawa_pm25, String warszawa_pm10, String warszawa_o3, String warszawa_no2, String warszawa_so2, String warszawa_co, String warszawa_population, String nazwa_katowice, String katowice_pm25, String katowice_pm10, String katowice_o3, String katowice_no2, String katowice_so2, String katowice_co, String katowice_population) {
         this.date = date;
         this.total_deaths_per_million = total_deaths_per_million;
         this.new_deaths_per_million = new_deaths_per_million;
+        this.nazwa_gdansk = nazwa_gdansk;
         this.gdansk_pm25 = gdansk_pm25;
         this.gdansk_pm10 = gdansk_pm10;
         this.gdansk_o3 = gdansk_o3;
@@ -58,6 +63,7 @@ public class Data {
         this.gdansk_so2 = gdansk_so2;
         this.gdansk_co = gdansk_co;
         this.gdansk_population = gdansk_population;
+        this.nazwa_krakow = nazwa_krakow;
         this.krakow_pm25 = krakow_pm25;
         this.krakow_pm10 = krakow_pm10;
         this.krakow_o3 = krakow_o3;
@@ -65,6 +71,7 @@ public class Data {
         this.krakow_so2 = krakow_so2;
         this.krakow_co = krakow_co;
         this.krakow_population = krakow_population;
+        this.nazwa_warszawa = nazwa_warszawa;
         this.warszawa_pm25 = warszawa_pm25;
         this.warszawa_pm10 = warszawa_pm10;
         this.warszawa_o3 = warszawa_o3;
@@ -72,49 +79,13 @@ public class Data {
         this.warszawa_so2 = warszawa_so2;
         this.warszawa_co = warszawa_co;
         this.warszawa_population = warszawa_population;
-        this.suwalki_pm25 = suwalki_pm25;
-        this.suwalki_pm10 = suwalki_pm10;
-        this.suwalki_o3 = suwalki_o3;
-        this.suwalki_no2 = suwalki_no2;
-        this.suwalki_so2 = suwalki_so2;
-        this.suwalki_co = suwalki_co;
-        this.suwalki_population = suwalki_population;
-    }
-
-    @Override
-    public String toString() {
-        return "Data{" +
-                "date='" + date + '\'' +
-                ", total_deaths_per_million='" + total_deaths_per_million + '\'' +
-                ", new_deaths_per_million='" + new_deaths_per_million + '\'' +
-                ", gdansk_pm25='" + gdansk_pm25 + '\'' +
-                ", gdansk_pm10='" + gdansk_pm10 + '\'' +
-                ", gdansk_o3='" + gdansk_o3 + '\'' +
-                ", gdansk_no2='" + gdansk_no2 + '\'' +
-                ", gdansk_so2='" + gdansk_so2 + '\'' +
-                ", gdansk_co='" + gdansk_co + '\'' +
-                ", gdansk_population='" + gdansk_population + '\'' +
-                ", krakow_pm25='" + krakow_pm25 + '\'' +
-                ", krakow_pm10='" + krakow_pm10 + '\'' +
-                ", krakow_o3='" + krakow_o3 + '\'' +
-                ", krakow_no2='" + krakow_no2 + '\'' +
-                ", krakow_so2='" + krakow_so2 + '\'' +
-                ", krakow_co='" + krakow_co + '\'' +
-                ", krakow_population='" + krakow_population + '\'' +
-                ", warszawa_pm25='" + warszawa_pm25 + '\'' +
-                ", warszawa_pm10='" + warszawa_pm10 + '\'' +
-                ", warszawa_o3='" + warszawa_o3 + '\'' +
-                ", warszawa_no2='" + warszawa_no2 + '\'' +
-                ", warszawa_so2='" + warszawa_so2 + '\'' +
-                ", warszawa_co='" + warszawa_co + '\'' +
-                ", warszawa_population='" + warszawa_population + '\'' +
-                ", suwalki_pm25='" + suwalki_pm25 + '\'' +
-                ", suwalki_pm10='" + suwalki_pm10 + '\'' +
-                ", suwalki_o3='" + suwalki_o3 + '\'' +
-                ", suwalki_no2='" + suwalki_no2 + '\'' +
-                ", suwalki_so2='" + suwalki_so2 + '\'' +
-                ", suwalki_co='" + suwalki_co + '\'' +
-                ", suwalki_population='" + suwalki_population + '\'' +
-                '}';
+        this.nazwa_katowice = nazwa_katowice;
+        this.katowice_pm25 = katowice_pm25;
+        this.katowice_pm10 = katowice_pm10;
+        this.katowice_o3 = katowice_o3;
+        this.katowice_no2 = katowice_no2;
+        this.katowice_so2 = katowice_so2;
+        this.katowice_co = katowice_co;
+        this.katowice_population = katowice_population;
     }
 }

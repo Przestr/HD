@@ -1,6 +1,7 @@
 package com.example.hd.controller;
 
 import com.example.hd.CSVHelper;
+import com.example.hd.DTOs.MiastoDTO;
 import com.example.hd.ResponseMessage;
 import com.example.hd.pojo.Data;
 import com.example.hd.repositories.DataRepository;
@@ -81,10 +82,18 @@ public class APIController {
         StreamingResponseBody responseBody = response -> {
             List<Data> list = dataRepository.findAll();
             for(Data data: list){
-                ObjectMapper mapper = new ObjectMapper();
-                String jsonString = mapper.writeValueAsString(data) +"\n";
-                response.write(jsonString.getBytes());
-                response.flush();
+                for(int i =0; i<4; i++) {
+                    ObjectMapper mapper = new ObjectMapper();
+                    MiastoDTO dto = new MiastoDTO(data, i);
+                    String jsonString = mapper.writeValueAsString(dto) + "\n";
+                    response.write(jsonString.getBytes());
+                    response.flush();
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {

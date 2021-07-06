@@ -71,7 +71,11 @@ public class CSVHelper {
                         attributes[27],
                         attributes[28],
                         attributes[29],
-                        attributes[30]
+                        attributes[30],
+                        attributes[31],
+                        attributes[32],
+                        attributes[33],
+                        attributes[34]
 
                 );
 
