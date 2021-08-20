@@ -18,8 +18,6 @@ import reactor.core.publisher.Mono;
 
 import java.util.List;
 
-import static org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE;
-
 
 @RequiredArgsConstructor
 @RequestMapping("/api/stream")
@@ -76,10 +74,13 @@ public class APIController {
 
     @GetMapping("/json")
     public ResponseEntity<StreamingResponseBody> streamJson() {
-        int maxRecords = 1000;
         StreamingResponseBody responseBody = response -> {
             List<Data> list = dataRepository.findAll();
+            int maxRecords = 0;
             for (Data data : list) {
+                maxRecords++;
+                if (maxRecords == 2)
+                    return;
                 ObjectMapper mapper = new ObjectMapper();
                 String jsonString = mapper.writeValueAsString(data) + "\n";
                 response.write(jsonString.getBytes());
