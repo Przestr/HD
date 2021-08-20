@@ -14,12 +14,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-import java.time.Duration;
 import java.util.List;
-import java.util.stream.Collectors;
+
+import static org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE;
 
 
 @RequiredArgsConstructor
@@ -32,7 +31,7 @@ public class APIController {
     @Autowired
     CSVService fileService;
 
-    @PostMapping("/upload")
+    @PostMapping(path = "/upload")
     public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file) {
         String message = "";
 
@@ -53,7 +52,7 @@ public class APIController {
     }
 
 
-    @GetMapping(value="/data")
+    @GetMapping(value = "/data")
     public ResponseEntity<StreamingResponseBody> streamData() {
         StreamingResponseBody responseBody = response -> {
             for (int i = 1; i <= 1000; i++) {
@@ -70,7 +69,7 @@ public class APIController {
                 .body(responseBody);
     }
 
-    private Mono<List<Data>> monoOfList(){
+    private Mono<List<Data>> monoOfList() {
         List<Data> dataList = dataRepository.findAll();
         return Mono.just(dataList);
     }
@@ -80,9 +79,9 @@ public class APIController {
         int maxRecords = 1000;
         StreamingResponseBody responseBody = response -> {
             List<Data> list = dataRepository.findAll();
-            for(Data data: list){
+            for (Data data : list) {
                 ObjectMapper mapper = new ObjectMapper();
-                String jsonString = mapper.writeValueAsString(data) +"\n";
+                String jsonString = mapper.writeValueAsString(data) + "\n";
                 response.write(jsonString.getBytes());
                 response.flush();
                 try {
