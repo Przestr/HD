@@ -79,7 +79,7 @@ public class APIController {
             int maxRecords = 0;
             for (Data data : list) {
                 maxRecords++;
-                if (maxRecords == 2)
+                if (maxRecords == 11)
                     return;
                 ObjectMapper mapper = new ObjectMapper();
                 String jsonString = mapper.writeValueAsString(data) + "\n";
