@@ -42,25 +42,18 @@ public class CSVHelper {
 //                if (maxRows == 11)
 //                    break;
 
-                //Rozszczepienie daty na dzień, miesiąc i rok
-                String data = attributes[0];
-                String day = String.valueOf(data.charAt(8)) + String.valueOf(data.charAt(9));
-                String month = String.valueOf(data.charAt(5)) + String.valueOf(data.charAt(6));
-                String year = String.valueOf(data.charAt(0)) + String.valueOf(data.charAt(1)) + String.valueOf(data.charAt(2)) + String.valueOf(data.charAt(3));
 
                 //Gdansk
-                float gdansk_total_deaths = 0f;
-                float gdansk_new_deaths = 0f;
+                int gdansk_total_deaths = 0;
+                int gdansk_new_deaths = 0;
                 if (!attributes[1].isBlank())
-                    gdansk_total_deaths = Float.parseFloat(attributes[1]) * Integer.parseInt(attributes[10])/1000000;
+                    gdansk_total_deaths = Integer.parseInt(String.valueOf(Math.round(Float.parseFloat(attributes[1]) * Integer.parseInt(attributes[10]) / 1000000)));
                 if (!attributes[2].isBlank())
-                    gdansk_new_deaths = Float.parseFloat(attributes[2]) * Integer.parseInt(attributes[10])/1000000;
+                    gdansk_new_deaths = Integer.parseInt(String.valueOf(Math.round(Float.parseFloat(attributes[2]) * Integer.parseInt(attributes[10]) / 1000000)));
 
 
                 Data gdansk = new Data(
-                        day,
-                        month,
-                        year,
+                        attributes[0],
                         attributes[1].isBlank() ? "" : String.valueOf(gdansk_total_deaths),
                         attributes[2].isBlank() ? "" : String.valueOf(gdansk_new_deaths),
                         attributes[4],
@@ -74,17 +67,15 @@ public class CSVHelper {
                 );
 
                 //Krakow
-                float krakow_total_deaths = 0f;
-                float krakow_new_deaths = 0f;
+                int krakow_total_deaths = 0;
+                int krakow_new_deaths = 0;
                 if (!attributes[1].isBlank())
-                    krakow_total_deaths = Float.parseFloat(attributes[1]) * Integer.parseInt(attributes[18])/1000000;
+                    krakow_total_deaths = Integer.parseInt(String.valueOf(Math.round(Float.parseFloat(attributes[1]) * Integer.parseInt(attributes[18]) / 1000000)));
                 if (!attributes[2].isBlank())
-                    krakow_new_deaths = Float.parseFloat(attributes[2]) * Integer.parseInt(attributes[18])/1000000;
+                    krakow_new_deaths = Integer.parseInt(String.valueOf(Math.round(Float.parseFloat(attributes[2]) * Integer.parseInt(attributes[18]) / 1000000)));
 
                 Data krakow = new Data(
-                        day,
-                        month,
-                        year,
+                        attributes[0],
                         attributes[1].isBlank() ? "" : String.valueOf(krakow_total_deaths),
                         attributes[2].isBlank() ? "" : String.valueOf(krakow_new_deaths),
                         attributes[12],
@@ -98,17 +89,15 @@ public class CSVHelper {
                 );
 
                 //Warszawa
-                float warszawa_total_deaths = 0f;
-                float warszawa_new_deaths = 0f;
+                int warszawa_total_deaths = 0;
+                int warszawa_new_deaths = 0;
                 if (!attributes[1].isBlank())
-                    warszawa_total_deaths = Float.parseFloat(attributes[1]) * Integer.parseInt(attributes[26])/1000000;
+                    warszawa_total_deaths = Integer.parseInt(String.valueOf(Math.round(Float.parseFloat(attributes[1]) * Integer.parseInt(attributes[26]) / 1000000)));
                 if (!attributes[2].isBlank())
-                    warszawa_new_deaths = Float.parseFloat(attributes[2]) * Integer.parseInt(attributes[26])/1000000;
+                    warszawa_new_deaths = Integer.parseInt(String.valueOf(Math.round(Float.parseFloat(attributes[2]) * Integer.parseInt(attributes[26]) / 1000000)));
 
                 Data warszawa = new Data(
-                        day,
-                        month,
-                        year,
+                        attributes[0],
                         attributes[1].isBlank() ? "" : String.valueOf(warszawa_total_deaths),
                         attributes[2].isBlank() ? "" : String.valueOf(warszawa_new_deaths),
                         attributes[20],
@@ -122,17 +111,15 @@ public class CSVHelper {
                 );
 
                 //Katowice
-                float katowice_total_deaths = 0f;
-                float katowice_new_deaths = 0f;
+                int katowice_total_deaths = 0;
+                int katowice_new_deaths = 0;
                 if (!attributes[1].isBlank())
-                    katowice_total_deaths = Float.parseFloat(attributes[1]) * Integer.parseInt(attributes[34])/1000000;
+                    katowice_total_deaths = Integer.parseInt(String.valueOf(Math.round(Float.parseFloat(attributes[1]) * Integer.parseInt(attributes[34]) / 1000000)));
                 if (!attributes[2].isBlank())
-                    katowice_new_deaths = Float.parseFloat(attributes[2]) * Integer.parseInt(attributes[34])/1000000;
+                    katowice_new_deaths = Integer.parseInt(String.valueOf(Math.round(Float.parseFloat(attributes[2]) * Integer.parseInt(attributes[34]) / 1000000)));
 
                 Data katowice = new Data(
-                        day,
-                        month,
-                        year,
+                        attributes[0],
                         attributes[1].isBlank() ? "" : String.valueOf(katowice_total_deaths),
                         attributes[2].isBlank() ? "" : String.valueOf(katowice_new_deaths),
                         attributes[28],

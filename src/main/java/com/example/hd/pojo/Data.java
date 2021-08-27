@@ -45,9 +45,7 @@ public class Data {
 //    public String katowice_population;
 
 
-    public String day;
-    public String month;
-    public String year;
+    public String date;
     public String total_deaths;
     public String new_deaths;
     public String pm25;
@@ -59,11 +57,9 @@ public class Data {
     public String city;
 
 
-    public Data(String day, String month, String year, String total_deaths, String new_deaths, String pm25, String pm10, String o3,
+    public Data(String date, String total_deaths, String new_deaths, String pm25, String pm10, String o3,
                 String no2, String so2, String co, String city) {
-        this.day = day;
-        this.month = month;
-        this.year = year;
+        this.date = date;
         this.total_deaths = total_deaths;
         this.new_deaths = new_deaths;
         this.pm25 = pm25;
