@@ -78,9 +78,9 @@ public class APIController {
             List<Data> list = dataRepository.findAll();
             int maxRecords = 0;
             for (Data data : list) {
-                maxRecords++;
-                if (maxRecords == 11)
-                    return;
+//                maxRecords++;
+//                if (maxRecords == 200)
+//                    return;
                 ObjectMapper mapper = new ObjectMapper();
                 String jsonString = mapper.writeValueAsString(data) + "\n";
                 response.write(jsonString.getBytes());
