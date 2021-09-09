@@ -1,0 +1,1 @@
+Program symulujący dane strumieniowe.
